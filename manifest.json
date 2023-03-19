@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Google App Filter",
+  "version": "1.0",
+  "description": "Filter Google Workspace Apps within the dropdown.",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "all_frames": true,
+      "run_at": "document_end",
+      "matches": ["https://*.google.com/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["html/filter.html"],
+      "matches": ["https://*.google.com/*"]
+    }
+  ]
+}
